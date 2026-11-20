@@ -12,7 +12,11 @@ function Favoris() {
       {favoris.length === 0 ? (
         <p>Aucun favori pour l'instant.</p>
       ) : (
-        <ListeArticles articles={favoris} favoris={favoris} onToggleFavori={basculerFavori} />
+        <ListeArticles
+          articles={favoris}
+          favoris={favoris}
+          onToggleFavori={basculerFavori}
+        />
       )}
     </div>
   )

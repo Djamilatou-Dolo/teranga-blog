@@ -10,14 +10,12 @@ function CommentaireForm({ onAjouter }) {
 
   function envoyer(evenement) {
     evenement.preventDefault()
-    if (nom.trim() === '') {
-      setErreur('Le nom est obligatoire.')
+
+    if (nom.trim() === '' || message.trim().length < 5) {
+      setErreur('Nom obligatoire et message de 5 caractères minimum.')
       return
     }
-    if (message.trim().length < 5) {
-      setErreur('Le message doit contenir au moins 5 caractères.')
-      return
-    }
+
     onAjouter({ id: crypto.randomUUID(), name: nom.trim(), body: message.trim() })
     setNom('')
     setMessage('')
@@ -27,7 +25,7 @@ function CommentaireForm({ onAjouter }) {
   return (
     <form className="formulaire" onSubmit={envoyer}>
       <input value={nom} onChange={e => setNom(e.target.value)} placeholder="Votre nom" />
-      <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="Votre commentaire" rows="3" />
+      <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="Votre commentaire" />
       {erreur && <p className="erreur">{erreur}</p>}
       <button className="btn" type="submit">Commenter</button>
     </form>

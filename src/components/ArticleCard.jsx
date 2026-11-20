@@ -1,15 +1,17 @@
 // TODO(P101) : Étape 1 (chapitre 1) puis étape 2 (chapitre 2).
 // Carte d'un article.
 // Props attendues : article (objet avec id, title, body), et plus tard estFavori, onBasculerFavori.
- import { Link } from 'react-router'
+import { Link } from 'react-router'
 
 function ArticleCard({ article, estFavori, onToggleFavori }) {
   return (
     <article className="carte">
-      <h2><Link to={`/articles/${article.id}`}>{article.title}</Link></h2>
-      <p>{article.body.slice(0, 100)}...</p>
+      <h2>
+        <Link to={'/articles/' + article.id}>{article.title}</Link>
+      </h2>
+      <p>{article.body}</p>
       <button className="btn" onClick={() => onToggleFavori(article)}>
-        {estFavori ? '★ Retirer des favoris' : '☆ Ajouter aux favoris'}
+        {estFavori ? 'Retirer des favoris' : 'Ajouter aux favoris'}
       </button>
     </article>
   )

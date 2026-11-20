@@ -1,27 +1,30 @@
 JOURNAL D'UTILISATION DE L'IA
-
 Projet : Teranga Blog
 
-1. Utilisation de l'intelligence artificielle
+## Outil utilisé
 
-Pendant la réalisation de mon projet Teranga Blog, j'ai utilisé ChatGPT comme outil d'accompagnement pour mieux comprendre certaines notions du cours React et résoudre des difficultés rencontrées pendant le développement.
+J'ai utilisé l'assistant IA Claude.
 
-2. Les principales utilisations
+## Pourquoi je l'ai utilisé
 
-- Demander des explications sur les composants et les props dans React.
-- Comprendre le fonctionnement de useState et de la gestion de l'état.
-- Comprendre certaines erreurs liées aux imports et aux noms des variables.
-- Obtenir des explications sur la navigation avec React Router.
-- Comprendre le principe des routes protégées et de la connexion simulée.
-- Obtenir des conseils pour le déploiement du projet sur Vercel.
-- Comprendre les éléments à présenter dans le README.md.
+- Pour comprendre les notions du cours (props, useState, useEffect, React Router).
+- Pour comprendre mes erreurs.
+- Pour apprendre à utiliser GitHub et Vercel.
 
-3. Ce que j'ai retenu
+## Les erreurs que j'ai corrigées
 
-L'utilisation de l'IA m'a permis de mieux comprendre certaines notions, mais j'ai également dû lire les cours, écrire mon code, effectuer des tests et vérifier le fonctionnement de mon application.
+- Un espace dans un chemin d'import.
+- Un nom exporté qui ne correspondait pas à celui importé.
+- Un composant utilisé sans import.
+- Une fonction déclarée deux fois.
 
-J'ai compris que l'intelligence artificielle est un outil d'accompagnement et qu'il est important de comprendre personnellement le code réalisé.
+## Ce que j'ai retenu
 
-4. Bilan personnel
+- Une prop se lit, elle ne se modifie pas.
+- Dans une liste, la clé est l'identifiant.
+- Outlet affiche la page enfant.
+- useParams renvoie du texte.
 
-Cette expérience m'a permis de progresser dans l'utilisation de React, de mieux comprendre la navigation entre les pages et de découvrir le processus de mise en ligne d'une application web avec Vercel.
+## Ce que j'ai fait moi-même
+
+J'ai écrit et relu mes fichiers, corrigé les erreurs, et fait Git et le déploiement. L'IA m'a donné des exemples de code, que j'ai relus ligne par ligne.

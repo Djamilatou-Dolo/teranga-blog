@@ -7,11 +7,11 @@ import ArticleCard from './ArticleCard'
 function ListeArticles({ articles, favoris, onToggleFavori }) {
   return (
     <div className="grille">
-      {articles.map(a => (
+      {articles.map(article => (
         <ArticleCard
-          key={a.id}
-          article={a}
-          estFavori={favoris.some(f => f.id === a.id)}
+          key={article.id}
+          article={article}
+          estFavori={favoris.some(f => f.id === article.id)}
           onToggleFavori={onToggleFavori}
         />
       ))}

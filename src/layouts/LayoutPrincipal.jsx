@@ -9,20 +9,20 @@ import { Link, NavLink, Outlet } from 'react-router'
 
 function LayoutPrincipal() {
   const [favoris, setFavoris] = useState([])
-  const [connecte, setConnecte] = useState(false)
 
   function basculerFavori(article) {
-    setFavoris(prev =>
-      prev.some(f => f.id === article.id)
-        ? prev.filter(f => f.id !== article.id)
-        : [...prev, article]
-    )
+    const dejaFavori = favoris.some(f => f.id === article.id)
+    if (dejaFavori) {
+      setFavoris(favoris.filter(f => f.id !== article.id))
+    } else {
+      setFavoris([...favoris, article])
+    }
   }
 
   return (
-    <div className="app">
+    <div>
       <nav className="navbar">
-        <Link to="/" className="logo">
+        <Link to="/">
           <img src="/logo-teranga-blog.png" alt="Teranga Blog" height="40" />
         </Link>
         <div className="liens">
@@ -30,12 +30,10 @@ function LayoutPrincipal() {
           <NavLink to="/articles">Articles</NavLink>
           <NavLink to="/auteurs">Auteurs</NavLink>
           <NavLink to="/favoris">Favoris ({favoris.length})</NavLink>
-          <NavLink to="/mon-espace">Mon espace</NavLink>
-          {!connecte && <NavLink to="/connexion">Connexion</NavLink>}
         </div>
       </nav>
       <main className="contenu">
-        <Outlet context={{ favoris, basculerFavori, connecte, setConnecte }} />
+        <Outlet context={{ favoris, basculerFavori }} />
       </main>
     </div>
   )
