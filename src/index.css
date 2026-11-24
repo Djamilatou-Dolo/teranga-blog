@@ -1,9 +1,7 @@
 /* Feuille de style de départ : le projet évalue React, pas le CSS.
    Tu peux l'utiliser telle quelle, la modifier, ou demander à une IA de réécrire tout le CSS
    et de placer les classes (className) dans ton JSX : c'est la seule aide complète autorisée. */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -13,25 +11,21 @@ body {
   line-height: 1.5;
 }
 
-a {
-  color: #0a2a4a;
-}
+a { color: #0a2a4a; }
 
-/* Barre de navigation */
 .navbar {
   display: flex;
   align-items: center;
   gap: 32px;
   padding: 12px 24px;
-  background: #ffffff;
+  background: #fff;
   border-bottom: 3px solid #f47c20;
   flex-wrap: wrap;
 }
 
-/* Espace entre les liens du menu */
 .liens {
   display: flex;
-  gap: 28px;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
@@ -42,23 +36,19 @@ a {
   border-bottom: 3px solid transparent;
 }
 
-.liens a:hover {
-  color: #f47c20;
-}
+.liens a:hover { color: #f47c20; }
 
 .liens a.active {
   color: #f47c20;
   border-bottom-color: #f47c20;
 }
 
-/* Zone de contenu centrée */
 .contenu {
   max-width: 1000px;
   margin: 0 auto;
   padding: 24px;
 }
 
-/* Cartes d'articles */
 .grille {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -67,32 +57,18 @@ a {
 }
 
 .carte {
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
+  background: #fff;
   border-radius: 10px;
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.carte h2 {
-  font-size: 1.1rem;
-  margin-top: 0;
-}
+.carte h2 { font-size: 1.1rem; margin-top: 0; }
+.carte a { text-decoration: none; }
 
-.carte a {
-  text-decoration: none;
-}
-
-.carte .btn {
-  margin-top: auto;
-  align-self: flex-start;
-}
-
-/* Boutons */
 .btn {
   background: #0a2a4a;
-  color: #ffffff;
+  color: #fff;
   border: none;
   padding: 8px 14px;
   border-radius: 6px;
@@ -100,11 +76,8 @@ a {
   font-weight: 600;
 }
 
-.btn:hover {
-  background: #f47c20;
-}
+.btn:hover { background: #f47c20; }
 
-/* Recherche et formulaire */
 .recherche {
   width: 100%;
   max-width: 400px;
@@ -130,23 +103,24 @@ a {
   font: inherit;
 }
 
-/* Commentaires */
-.commentaires {
-  list-style: none;
-  padding: 0;
-}
+.commentaires { list-style: none; padding: 0; }
 
 .commentaires li {
-  background: #ffffff;
+  background: #fff;
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 10px;
 }
 
-/* Messages */
+.liste-auteurs { padding-left: 20px; }
+.liste-auteurs li { margin-bottom: 10px; }
+.liste-auteurs .btn { margin-left: 10px; padding: 2px 8px; }
+
 .erreur {
   color: #b00020;
   background: #fde8ea;
   padding: 10px;
   border-radius: 6px;
 }
+
+.chargement { color: #666; font-style: italic; }
