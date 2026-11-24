@@ -15,10 +15,12 @@ function Accueil() {
 
   useEffect(() => {
     const controleur = new AbortController()
+    setChargement(true)
+    setErreur(null)
 
-    lireJson(API_URL + '/posts?_limit=6', controleur.signal)
-      .then(donnees => {
-        setArticles(donnees)
+    lireJson(`${API_URL}/posts?_limit=6`, controleur.signal)
+      .then(data => {
+        setArticles(data)
         setChargement(false)
       })
       .catch(err => {
@@ -34,12 +36,9 @@ function Accueil() {
   return (
     <div>
       <h1>Bienvenue sur Teranga Blog</h1>
+      <h2>Derniers articles</h2>
       <EtatRequete chargement={chargement} erreur={erreur}>
-        <ListeArticles
-          articles={articles}
-          favoris={favoris}
-          onToggleFavori={basculerFavori}
-        />
+        <ListeArticles articles={articles} favoris={favoris} onToggleFavori={basculerFavori} />
       </EtatRequete>
     </div>
   )
