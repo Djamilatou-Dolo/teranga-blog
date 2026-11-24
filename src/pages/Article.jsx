@@ -19,14 +19,15 @@ function Article() {
     const controleur = new AbortController()
     setChargement(true)
     setErreur(null)
+    setArticle(null)
 
     Promise.all([
-      lireJson(API_URL + '/posts/' + id, controleur.signal),
-      lireJson(API_URL + '/posts/' + id + '/comments', controleur.signal),
+      lireJson(`${API_URL}/posts/${id}`, controleur.signal),
+      lireJson(`${API_URL}/posts/${id}/comments`, controleur.signal),
     ])
-      .then(([articleRecu, commentairesRecus]) => {
-        setArticle(articleRecu)
-        setCommentaires(commentairesRecus)
+      .then(([a, c]) => {
+        setArticle(a)
+        setCommentaires(c)
         setChargement(false)
       })
       .catch(err => {
@@ -40,7 +41,7 @@ function Article() {
   }, [id])
 
   function ajouter(commentaire) {
-    setCommentaires([...commentaires, commentaire])
+    setCommentaires(c => [...c, commentaire])
   }
 
   return (
@@ -58,4 +59,4 @@ function Article() {
   )
 }
 
-export default Article;
+export default Article
