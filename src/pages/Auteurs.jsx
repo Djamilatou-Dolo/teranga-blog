@@ -13,10 +13,12 @@ function Auteurs() {
 
   useEffect(() => {
     const controleur = new AbortController()
+    setChargement(true)
+    setErreur(null)
 
-    lireJson(API_URL + '/users', controleur.signal)
-      .then(donnees => {
-        setAuteurs(donnees)
+    lireJson(`${API_URL}/users`, controleur.signal)
+      .then(data => {
+        setAuteurs(data)
         setChargement(false)
       })
       .catch(err => {
@@ -33,10 +35,11 @@ function Auteurs() {
     <div>
       <h1>Auteurs</h1>
       <EtatRequete chargement={chargement} erreur={erreur}>
-        <ul>
+        <ul className="liste-auteurs">
           {auteurs.map(a => (
             <li key={a.id}>
-              <Link to={'/auteurs/' + a.id}>{a.name}</Link> ({a.company.name})
+              <Link to={`/auteurs/${a.id}`}>{a.name}</Link>
+              <span> — {a.company.name}</span>
             </li>
           ))}
         </ul>
@@ -45,4 +48,4 @@ function Auteurs() {
   )
 }
 
-export default Auteurs;
+export default Auteurs
