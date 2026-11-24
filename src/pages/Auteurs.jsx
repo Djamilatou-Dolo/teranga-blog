@@ -45,4 +45,4 @@ function Auteurs() {
   )
 }
 
-export default Auteurs
+export default Auteurs;

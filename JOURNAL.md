@@ -27,4 +27,4 @@ J'ai utilisé l'assistant IA Claude.
 
 ## Ce que j'ai fait moi-même
 
-J'ai écrit et relu mes fichiers, corrigé les erreurs, et fait Git et le déploiement. L'IA m'a donné des exemples de code, que j'ai relus ligne par ligne.
+J'ai écrit et relu mes fichiers, corrigé les erreurs, et fait Git et le déploiement. L'IA m'a donné des exemples de code, que j'ai relus ligne par ligne
