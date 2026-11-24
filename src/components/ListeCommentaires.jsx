@@ -2,6 +2,7 @@
 // Affiche les commentaires d'un article.
 // Props attendues : commentaires (tableau avec id, name, body).
 function ListeCommentaires({ commentaires }) {
+  if (commentaires.length === 0) return <p>Aucun commentaire.</p>
   return (
     <ul className="commentaires">
       {commentaires.map(c => (
